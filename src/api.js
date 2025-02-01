@@ -1,6 +1,6 @@
 // api.js
 export function requestApi(searchTerm) {
-    const url = 'https://679da89587618946e6558241.mockapi.io/api/artists11/Artists';
+    const url = process.env.REACT_APP_API_URL;
     
     return fetch(url)
         .then((response) => response.json())

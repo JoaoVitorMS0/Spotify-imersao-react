@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import "./Header.css";
 import "../Reset/Reset.css";
-import "../script";
 import smallRight from "../assets/icons/small-right.png";
 import smallLeft from "../assets/icons/small-left.png";
 import imgSearch from "../assets/icons/search.png";
+import { requestApi } from "../api";
 
-const Header = () => {
-  const [searchValue, setSearchValue] = useState(""); // Criando estado para o valor do input
+const Header = ({ onSearchResults }) => {
+  const [searchValue, setSearchValue] = useState("");
 
-  const handleChange = (event) => {
-    setSearchValue(event.target.value); // Atualizando o estado com o valor do input
+  const handleChange = async (event) => {
+    const value = event.target.value;
+    setSearchValue(value);
+    
+    if (value) {
+      const results = await requestApi(value);
+      onSearchResults(results); // Enviando resultados para o componente pai
+    } else {
+      onSearchResults([]); // Limpa os resultados quando input está vazio
+    }
   };
 
   return (

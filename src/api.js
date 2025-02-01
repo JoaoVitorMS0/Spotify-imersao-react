@@ -1,23 +1,20 @@
-
-// Função para buscar artistas
+// api.js
 export function requestApi(searchTerm) {
-    const url = 'https://projeto-api-json.vercel.app/artists.json';
+    const url = 'https://679da89587618946e6558241.mockapi.io/api/artists11/Artists';
     
     return fetch(url)
         .then((response) => response.json())
         .then((data) => {
-            // Filtra os artistas com base no searchTerm
             return data.filter(artist => 
                 artist.name.toLowerCase().includes(searchTerm.toLowerCase())
             );
         })
         .catch((error) => {
             console.error('Erro ao carregar o JSON:', error);
-            return []; // Retorna um array vazio em caso de erro
+            return [];
         });
 }
 
-// Função para exibir os resultados
 export function displayResults(results, resultArtist, resultPlaylist) {
     resultPlaylist.classList.add('hidden');
     const artistName = document.getElementById('artist-name');
@@ -34,5 +31,5 @@ export function displayResults(results, resultArtist, resultPlaylist) {
         artistImage.src = firstArtist.urlImg;
     }
 
-    resultArtist.classList.remove('hidden');
+    resultArtist.classList.remove('hidden')
 }

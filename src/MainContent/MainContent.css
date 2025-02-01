@@ -70,7 +70,35 @@
     height: 200px;
     overflow: hidden;
     border-radius: 8px;
+    transition: all 0.5s;
 }
+
+.cards .play-icon {
+    position: absolute;
+    left: 10px; 
+    bottom: 10px;
+    background-color: #1db954;
+    border-radius: 50%;
+    padding: 18px;
+    font-size: 24px;
+    color: #000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards:hover .play-icon {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cards .play-icon svg {
+    pointer-events: none;
+}
+
 
 .cards span {
     padding: 16px;
@@ -140,6 +168,9 @@
 .card15 {
     background: rgb(60, 30, 80);
 }
+.card16 {
+    background: rgb(22, 122, 145);
+}
 
 /* FIM COLOR CARDS */
 
@@ -172,7 +203,7 @@
 }
 
 .artist-card {
-    background: #181818;
+    background: #12271b;
     border-radius: 8px;
     -ms-flex: 1;
     flex: 1;
@@ -184,7 +215,7 @@
 }
 
 .artist-card:hover {
-    background-color: #252525;
+    background-color: #08170f;
 }
 
 .card-img {
@@ -238,6 +269,8 @@
 }
 
 .play .fa-play {
+    display: flex;
+    align-items: center;
     position: absolute;
     right: 10px;
     top: 120px;

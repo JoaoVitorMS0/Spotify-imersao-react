@@ -58,16 +58,16 @@ const Sidebar = () => {
                         </button>
                     </div>
                 </section>
-                <section className="section-playlist">
-                    <div className="section-playlist__content">
-                        <div className="playlist-title">
+                <section className="section-podcast">
+                    <div className="section-podcast__content">
+                        <div className="podcast-title">
                             <span className="podcast-icon">
                                 <Podcast />
                             </span>
                             <span className="text title">Que tal seguir um podcast novo?</span>
                         </div>
                         <span className="text subtitle">Avisaremos você sobre novos episódios.</span>
-                        <button className="section-playlist__button2">
+                        <button className="section-podcast__button2">
                             <span>Explore podcasts</span>
                         </button>
                     </div>

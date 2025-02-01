@@ -1,6 +1,6 @@
 // api.js
 export function requestApi(searchTerm) {
-    const url = process.env.REACT_APP_API_URL;
+    const url = process.env.REACT_APP_API_URL; //Link mocado da API
     
     return fetch(url)
         .then((response) => response.json())
